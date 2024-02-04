@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Ubuntu:wght@400;500&display=swap');
+
+*{
+    width: 100%;
+    margin: 0%;
+    /* background: rgb(254, 252, 249); */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.flex{
+    display: flex;
+    flex-direction:row ;
+}
+.navbar{
+    width: 80%;
+    height: 70px;
+    background-color: white;
+    margin-left: 140px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: top-side-animation 2s ease forwards;
+    transition: transform .1s;
+}
+.navbar:hover{
+   background: rgba(245, 245, 245, 0.71);
+}
+.dark-mode {
+    background-color: black;
+    color: white;
+}  
+.image-border{
+    border: 2px solid whitesmoke;
+}
+.navbar-border{
+    box-shadow: 0 4px 8px 0 rgba(251, 250, 250, 0.929), 0 6px 10px 0 rgba(251, 250, 250, 0.929);
+}
+
+.navbar li{
+    font-size: 20px;
+    margin-top: 20px;
+    list-style: none;
+    transition: trasform .2s;
+}
+.navbar li a{
+    text-decoration: none;
+    transition: trasform .2s;
+}
+.navbar li:hover{
+    color: blue;
+    transform: scale(1.1);
+}
+.navbar li a:hover{
+    color: blue;
+}
+.name{
+    margin-top: 15px;
+    margin-left: 30px;
+    font-size: 23px;
+    font-family:monospace;
+    color: #ef4e7b;
+}
+#btn{
+    margin-top: 20px;
+    height: 25px;
+    width: 30px;
+    margin-left: 20vh;
+    font-size: 20px;
+    font-style: italic;
+}
+
+section{
+    height: 90vh;
+    width: 100%;
+    /* background-color: aquamarine; */
+    justify-content: center;
+    align-items: center;
+    
+}
+.right-side h3{
+    font-size: 20px;
+}
+.right-side h1{
+    font-size: 40px;
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.right-side p{
+    font-size: 18px;
+}
+.data{
+    margin: 0px 200px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation: left-side-animation 2s ease forwards;
+    display: flex;
+    flex-direction: row;
+}
+.icons{
+    height: 40px ;
+    width: 200px;
+    margin-top: 20px;
+}
+.icons button{
+    --borderWidth: 3px;
+  background:white;
+  position: relative;
+  border-radius: var(--borderWidth);
+  margin: 1px 5px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.icons button:hover{
+    transform: scale(1.1);
+}
+
+.icons button::after{
+    content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(3 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+#img{
+    margin-left: 200px;
+    height: 250px;
+    width: 250px;
+    /* animation: curve 1s ease forwards; */
+    animation: right-side-animation 2s ease forwards;
+    transition: trasform .2s;
+}
+#img:hover{
+    transform: scale(-1.1);
+    border-radius: 50px 40px 50px 40px;
+    scale: 1.1;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes top-side-animation{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes left-side-animation{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes right-side-animation{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1133px){
+   * {
+        height: auto;
+        /* width: auto; */
+    }
+    .navbar{
+        display:contents;
+        height: auto;
+        width: auto;
+    }
+    
+}
+
+@media screen and (max-width: 625px){
+   .data{
+    flex: none;  
+    flex-direction: column;
+   }
+    
+}
+
+/* About section */
+.about_section{
+    height: 100vh;
+    width: 100%;
+    background-color: yellow;
+
+}
+
+.left{
+    left: 0%;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+}
+.right{
+    right: 0%;
+    background-color: yellow;
+    height: 100%;
+    width: 50%;
+}
